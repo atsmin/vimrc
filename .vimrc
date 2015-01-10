@@ -1,4 +1,6 @@
 set number
+colorscheme blue
+set background=light
 set nocompatible               " be iMproved
 filetype off
 
