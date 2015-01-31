@@ -18,3 +18,11 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias chrome='google-chrome'
+alias pyserv='python -m SimpleHTTPServer'
+
+#Search command history
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
