@@ -19,6 +19,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias chrome='google-chrome'
 alias pyserv='python -m SimpleHTTPServer'
+alias paste='xclip -o'
+clip () {
+        cat $1 | xclip
+    }
+
 
 #Search command history
 autoload history-search-end
