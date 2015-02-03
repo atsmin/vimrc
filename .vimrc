@@ -1,7 +1,10 @@
 set number
-colorscheme blue
 set background=light
 set nocompatible               " be iMproved
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4
 filetype off
 
 if has('vim_starting')
