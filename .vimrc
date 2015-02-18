@@ -1,10 +1,13 @@
+set ff=unix
+set fileencoding=utf-8
 set number
 set background=light
-set nocompatible               " be iMproved
+set nocompatible
 set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
+set hlsearch
 filetype off
 
 if has('vim_starting')
@@ -22,6 +25,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 NeoBundle 'scrooloose/nerdtree'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
@@ -60,16 +64,30 @@ NeoBundle 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
 
 " ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 
 " コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
 
 " インデントに色を付けて見やすくする
-" NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
 
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
+
+function Pdbsnip()
+   let magic_comment = 'import pdb;pdb.set_trace()'
+   let pos = getpos(".")
+   execute ":normal i" . magic_comment
+   call setpos(".", pos)
+endfunction
+
+function Pycode()
+   let magic_comment = '# -*- coding:utf-8 -*-'
+   let pos = getpos(".")
+   execute ":normal i" . magic_comment
+   call setpos(".", pos)
+endfunction
