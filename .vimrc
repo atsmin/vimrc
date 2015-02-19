@@ -78,14 +78,14 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 
-function Pdbsnip()
+function Pdb()
    let magic_comment = 'import pdb;pdb.set_trace()'
    let pos = getpos(".")
    execute ":normal i" . magic_comment
    call setpos(".", pos)
 endfunction
 
-function Pycode()
+function Pye()
    let magic_comment = '# -*- coding:utf-8 -*-'
    let pos = getpos(".")
    execute ":normal i" . magic_comment
