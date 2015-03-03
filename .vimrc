@@ -1,7 +1,7 @@
 set ff=unix
 set fileencoding=utf-8
 set number
-set background=light
+set background=dark
 set nocompatible
 set tabstop=4
 set autoindent
@@ -9,6 +9,8 @@ set expandtab
 set shiftwidth=4
 set hlsearch
 filetype off
+" 行末のスペースを削除
+autocmd BufWritePre * :%s/\s\+$//e
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -78,14 +80,14 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 
-function Pdb()
+function Pd()
    let magic_comment = 'import pdb;pdb.set_trace()'
    let pos = getpos(".")
    execute ":normal i" . magic_comment
    call setpos(".", pos)
 endfunction
 
-function Pye()
+function Pe()
    let magic_comment = '# -*- coding:utf-8 -*-'
    let pos = getpos(".")
    execute ":normal i" . magic_comment
