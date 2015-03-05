@@ -2,7 +2,8 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+PROMPT='%n@%m:%d$ '
+# bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/aminami/.zshrc'
@@ -20,6 +21,7 @@ alias l='ls -CF'
 alias chrome='google-chrome'
 alias pyserv='python -m SimpleHTTPServer'
 alias paste='xclip -o'
+alias f8='flake8'
 clip () {
         cat $1 | xclip
     }
