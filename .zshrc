@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-PROMPT='%n@%m:%d$ '
+PROMPT='%n@%m:%~$ '
 # bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
