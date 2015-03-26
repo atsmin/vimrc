@@ -1,0 +1,19 @@
+[user]
+    name = aminami1127
+    email = aminami1127@users.noreply.github.com
+[core]
+    excludesfile = $HOME/.gitignore
+	editor = vim -c \"set fenc=utf-8\"
+[merge]
+    ff = false
+[alias]
+    ci = commit
+    dif = diff
+    st = status
+    pul = pull
+    up = checkout
+    br = branch
+    vv = branch -vv
+    ad = add
+[reviewboard]
+    url = http://review.develop-bbt757.com
