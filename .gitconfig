@@ -15,5 +15,7 @@
     br = branch
     vv = branch -vv
     ad = add
+    mg = merge
+    ps = push
 [reviewboard]
     url = http://review.develop-bbt757.com
