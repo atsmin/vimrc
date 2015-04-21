@@ -93,3 +93,6 @@ function Pe()
    execute ":normal i" . magic_comment
    call setpos(".", pos)
 endfunction
+
+command! Pd call Pd()
+command! Pe call Pe()
