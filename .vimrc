@@ -96,3 +96,7 @@ endfunction
 
 command! Pd :call Pd()
 command! Pe :call Pe()
+
+" command search
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
