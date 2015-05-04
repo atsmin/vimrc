@@ -8,6 +8,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set hlsearch
+set pastetoggle=<f5>
 filetype off
 " 行末のスペースを削除
 autocmd BufWritePre * :%s/\s\+$//e
@@ -72,7 +73,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 NeoBundle 'tomtom/tcomment_vim'
 
 " インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
