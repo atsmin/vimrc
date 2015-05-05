@@ -101,3 +101,5 @@ command! Pe :call Pe()
 " command search
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
