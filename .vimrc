@@ -29,6 +29,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args="--max-line-length=99"
 NeoBundle 'scrooloose/nerdtree'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
