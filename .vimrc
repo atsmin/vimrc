@@ -85,14 +85,14 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 function Pd()
    let magic_comment = 'import pdb;pdb.set_trace()'
    let pos = getpos(".")
-   execute ":normal i" . magic_comment
+   execute ":normal o" . magic_comment
    call setpos(".", pos)
 endfunction
 
 function Pe()
    let magic_comment = '# -*- coding:utf-8 -*-'
    let pos = getpos(".")
-   execute ":normal i" . magic_comment
+   execute ":normal O" . magic_comment
    call setpos(".", pos)
 endfunction
 
