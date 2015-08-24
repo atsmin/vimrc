@@ -3,7 +3,7 @@
     email = aminami1127@users.noreply.github.com
 [core]
     excludesfile = $HOME/.gitignore
-	editor = vim -c \"set fenc=utf-8\"
+    editor = vim -c \"set fenc=utf-8\"
 [merge]
     ff = false
 [alias]
@@ -19,3 +19,5 @@
     ps = push
 [reviewboard]
     url = http://review.develop-bbt757.com
+[push]
+	default = matching
