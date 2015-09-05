@@ -1,3 +1,5 @@
+filetype off
+
 set ff=unix
 set fileencoding=utf-8
 set number
@@ -23,9 +25,6 @@ let g:syntastic_python_flake8_args="--max-line-length=99"
 NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
-
-filetype plugin indent on
-syntax on
 
 let g:indent_guides_enable_on_vim_startup = 1
 
@@ -61,3 +60,6 @@ map <C-h> <C-w><Left>
 " Switch to alternate file
 map <C-t> :bnext<CR>
 map <C-r> :bprevious<CR>
+
+filetype plugin indent on
+syntax on
