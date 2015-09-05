@@ -49,7 +49,7 @@ command! Pe :call Pe()
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-nnoremap <silent> <C-m> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <C-n> :<C-u>nohlsearch<CR><C-l>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
