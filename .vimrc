@@ -59,7 +59,7 @@ map <C-h> <C-w><Left>
 
 " Switch to alternate file
 map <C-t> :bnext<CR>
-map <C-r> :bprevious<CR>
+map <C-y> :bprevious<CR>
 
 filetype plugin indent on
 syntax on
