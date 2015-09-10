@@ -10,7 +10,8 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set hlsearch
-set pastetoggle=<f5>
+set pastetoggle=<S-p>
+
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -25,7 +26,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
@@ -36,27 +37,26 @@ call neobundle#end()
 let g:indent_guides_enable_on_vim_startup = 1
 
 function Pd()
-   let magic_comment = 'import pdb;pdb.set_trace()'
+   let text = 'import pdb;pdb.set_trace()'
    let pos = getpos(".")
-   execute ":normal o" . magic_comment
+   execute ":normal o" . text
    call setpos(".", pos)
 endfunction
 
 function Pe()
-   let magic_comment = '# -*- coding:utf-8 -*-'
+   let text = '# -*- coding:utf-8 -*-'
    let pos = getpos(".")
-   execute ":normal O" . magic_comment
+   execute ":normal O" . text
    call setpos(".", pos)
 endfunction
-
-command! Pd :call Pd()
-command! Pe :call Pe()
+nnoremap <silent> <C-d> :<C-u>call Pd()<CR>
+nnoremap <silent> <C-e> :<C-u>call Pe()<CR>
 
 " command search
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-nnoremap <silent> <C-n> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -65,10 +65,8 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Switch to alternate file
-map <C-t> :bnext<CR>
-map <C-y> :bprevious<CR>
-
-map <C-q> :set paste<CR>
+map <S-f> :bnext<CR>
+map <S-b> :bprevious<CR>
 
 filetype plugin indent on
 syntax on
