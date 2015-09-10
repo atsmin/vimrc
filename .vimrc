@@ -19,10 +19,17 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#begin(expand('~/.vim/bundle/'))
 endif
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-line-length=99"
-NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
@@ -60,6 +67,8 @@ map <C-h> <C-w><Left>
 " Switch to alternate file
 map <C-t> :bnext<CR>
 map <C-y> :bprevious<CR>
+
+map <C-q> :set paste<CR>
 
 filetype plugin indent on
 syntax on
