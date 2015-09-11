@@ -10,7 +10,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set hlsearch
-set pastetoggle=<S-p>
+set pastetoggle=<C-p>
 
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
