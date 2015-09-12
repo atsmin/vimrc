@@ -10,7 +10,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set hlsearch
-set pastetoggle=<S-p>
+set pastetoggle=<C-p>
 
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
@@ -65,7 +65,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Switch to alternate file
-map <S-f> :bnext<CR>
+map <S-r> :bnext<CR>
 map <S-b> :bprevious<CR>
 
 filetype plugin indent on
