@@ -10,7 +10,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set hlsearch
-set pastetoggle=<C-p>
+set pastetoggle=<C-k>
 
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
@@ -49,7 +49,7 @@ function Pe()
    execute ":normal O" . text
    call setpos(".", pos)
 endfunction
-nnoremap <silent> <C-d> :<C-u>call Pd()<CR>
+nnoremap <silent> <C-t> :<C-u>call Pd()<CR>
 nnoremap <silent> <C-e> :<C-u>call Pe()<CR>
 
 " command search
