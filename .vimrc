@@ -2,15 +2,33 @@ filetype off
 
 set ff=unix
 set fileencoding=utf-8
+" Spaces & Tabs
+set expandtab
+set tabstop=4
+set softtabstop=4
+" UI Config
+syntax on
 set number
 set background=dark
 set nocompatible
-set tabstop=4
 set autoindent
-set expandtab
 set shiftwidth=4
-set hlsearch
 set pastetoggle=<C-k>
+set cursorline
+" Searching
+set incsearch
+set hlsearch
+" Folding
+set foldenable
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
+nnoremap <space> za
+
+" Movement
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
 
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
@@ -65,8 +83,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 " Switch to alternate file
-map <S-r> :bnext<CR>
-map <S-b> :bprevious<CR>
+map <C-n> :bnext<CR>
+map <C-p> :bprevious<CR>
 
 filetype plugin indent on
-syntax on
