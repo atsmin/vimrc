@@ -74,7 +74,7 @@ nnoremap <silent> <C-e> :<C-u>call Pe()<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
+nnoremap <silent> <C-a> :<C-u>nohlsearch<CR>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
