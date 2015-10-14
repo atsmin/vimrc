@@ -15,6 +15,7 @@ compinit
 
 
 alias ls='ls --color=auto'
+alias rm='rm -i'
 alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
