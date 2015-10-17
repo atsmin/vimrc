@@ -29,8 +29,6 @@ nnoremap <space> za
 nnoremap B ^
 nnoremap E $
 
-set autochdir
-
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
 
