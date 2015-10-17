@@ -24,11 +24,12 @@ set foldmethod=indent
 set foldlevelstart=10
 set foldnestmax=10
 nnoremap <space> za
-
 " Movement
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $
+
+set autochdir
 
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
