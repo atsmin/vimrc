@@ -24,6 +24,7 @@ set foldmethod=indent
 set foldlevelstart=10
 set foldnestmax=10
 nnoremap <space> za
+
 " Movement
 " move to beginning/end of line
 nnoremap B ^
