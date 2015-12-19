@@ -71,6 +71,12 @@ endfunction
 nnoremap <silent> <C-t> :<C-u>call Pd()<CR>
 nnoremap <silent> <C-e> :<C-u>call Pe()<CR>
 
+" rename current file
+function Rename(newfile)
+    call rename(expand('%'), a:newfile)
+    e newfile
+endfunction
+
 " command search
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
