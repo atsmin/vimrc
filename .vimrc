@@ -50,6 +50,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args="--max-line-length=99"
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_sql_checkers = ['sqlint']
 
 call neobundle#end()
 
@@ -92,5 +93,12 @@ map <C-h> <C-w><Left>
 " Switch to alternate file
 map <C-n> :bnext<CR>
 map <C-p> :bprevious<CR>
+
+augroup Javascript
+  autocmd!
+  autocmd FileType javascript setlocal shiftwidth=2
+  autocmd FileType javascript setlocal softtabstop=2
+  autocmd FileType javascript setlocal tabstop=2
+augroup END
 
 filetype plugin indent on
