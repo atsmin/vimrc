@@ -17,6 +17,8 @@
     ad = add
     mg = merge
     ps = push
+    rh = reset --hard
+    rs = reset --soft
 [reviewboard]
     url = http://review.develop-bbt757.com
 [push]
