@@ -19,6 +19,7 @@
     ps = push
     rh = reset --hard
     rs = reset --soft
+    ft = fetch
 [reviewboard]
     url = http://review.develop-bbt757.com
 [push]
