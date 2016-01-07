@@ -14,17 +14,21 @@ compinit
 # End of lines added by compinstall
 
 
-alias ls='ls --color=auto'
+alias ls='ls -a --color=auto'
 alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
 alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ..='cd ..'
 alias chrome='google-chrome'
 alias pyserv='python -m SimpleHTTPServer'
 alias paste='xclip -o'
 alias f8='flake8'
 alias view='vim -R'
+alias nxst= 'sudo service nginx start'
 clip () {
         cat $1 | xclip
     }
