@@ -94,6 +94,13 @@ map <C-h> <C-w><Left>
 map <C-n> :bnext<CR>
 map <C-p> :bprevious<CR>
 
+augroup Html
+  autocmd!
+  autocmd FileType html setlocal shiftwidth=2
+  autocmd FileType html setlocal softtabstop=2
+  autocmd FileType html setlocal tabstop=2
+augroup END
+
 augroup Javascript
   autocmd!
   autocmd FileType javascript setlocal shiftwidth=2
