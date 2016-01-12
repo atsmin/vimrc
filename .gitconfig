@@ -7,7 +7,7 @@
 [merge]
     ff = false
 [alias]
-    ci = commit
+    cm = commit
     dif = diff
     st = status
     pul = pull
@@ -20,6 +20,7 @@
     rh = reset --hard
     rs = reset --soft
     ft = fetch
+    mg = merge
 [reviewboard]
     url = http://review.develop-bbt757.com
 [push]
