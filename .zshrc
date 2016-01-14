@@ -14,7 +14,8 @@ compinit
 # End of lines added by compinstall
 
 
-alias ls='ls -a --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
