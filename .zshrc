@@ -31,7 +31,7 @@ alias pyserv='python -m SimpleHTTPServer'
 alias paste='xclip -o'
 alias f8='flake8'
 alias view='vim -R'
-alias nxst= 'sudo service nginx start'
+alias nxst='sudo service nginx start'
 clip () {
         cat $1 | xclip
     }
