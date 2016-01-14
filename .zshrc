@@ -32,6 +32,7 @@ alias paste='xclip -o'
 alias f8='flake8'
 alias view='vim -R'
 alias nxst='sudo service nginx start'
+alias nxrst='sudo service nginx restart'
 clip () {
         cat $1 | xclip
     }
