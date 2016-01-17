@@ -32,6 +32,7 @@ alias f8='flake8'
 alias view='vim -R'
 alias nxst='sudo service nginx start'
 alias nxrst='sudo service nginx restart'
+alias sshaf='eval `ssh-agent` && ssh-add'
 clip () {
         cat $1 | xclip
     }
