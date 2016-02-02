@@ -33,6 +33,7 @@ alias view='vim -R'
 alias nxst='sudo service nginx start'
 alias nxrst='sudo service nginx restart'
 alias sshaf='eval `ssh-agent` && ssh-add'
+alias spvctl='sudo supervisorctl'
 clip () {
         cat $1 | xclip
     }
