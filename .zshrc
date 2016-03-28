@@ -61,3 +61,5 @@ precmd () {
     GIT_PS1_SHOWUPSTREAM="auto"
     GIT_PS1_DESCRIBE_STYLE="default"
     GIT_PS1_SHOWCOLORHINTS=1
+
+setxkbmap -option ctrl:swapcaps
