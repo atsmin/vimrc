@@ -1,15 +1,2 @@
-VimClojure
-neobundle.vim
-neocomplcache
-neomru.vim
-neosnippet
 nerdtree
 syntastic
-tcomment_vim
-unite.vim
-vim-fugitive
-vim-indent-guides
-vim-slime
-vim-trailing-whitespace
-vimproc
-vimshell
