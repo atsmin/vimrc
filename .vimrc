@@ -110,6 +110,13 @@ augroup Javascript
   autocmd FileType javascript setlocal tabstop=2
 augroup END
 
+augroup SQL
+  autocmd!
+  autocmd FileType sql setlocal shiftwidth=2
+  autocmd FileType sql setlocal softtabstop=2
+  autocmd FileType sql setlocal tabstop=2
+augroup END
+
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 filetype plugin indent on
