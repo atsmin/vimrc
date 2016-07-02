@@ -33,6 +33,46 @@ nnoremap E $
 " delete backspaces in end of line
 autocmd BufWritePre * :%s/\s\+$//e
 
+" command search
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+nnoremap <silent> <S-m> :<C-u>nohlsearch<CR>
+
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+" Switch to alternate files
+map <C-n> :bnext<CR>
+map <C-p> :bprevious<CR>
+
+" rename current file
+function Rename(name)
+    call rename(expand('%'), a:name)
+    execute 'bd | e ' . a:name
+endfunction
+command! -nargs=1 Mv call Rename(<q-args>)
+
+" for python
+function PythonDebug()
+   let text = 'import pdb;pdb.set_trace()'
+   let pos = getpos(".")
+   execute ":normal o" . text
+   call setpos(".", pos)
+endfunction
+
+function PythonEncoding()
+   let text = '# -*- coding:utf-8 -*-'
+   let pos = getpos(".")
+   execute ":normal O" . text
+   call setpos(".", pos)
+endfunction
+nnoremap <silent> <C-t> :<C-u>call PythonDebug()<CR>
+nnoremap <silent> <C-e> :<C-u>call PythonEncoding()<CR>
+
 " plugin
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -56,44 +96,6 @@ call neobundle#end()
 
 let g:indent_guides_enable_on_vim_startup = 1
 
-function Pd()
-   let text = 'import pdb;pdb.set_trace()'
-   let pos = getpos(".")
-   execute ":normal o" . text
-   call setpos(".", pos)
-endfunction
-
-function Pe()
-   let text = '# -*- coding:utf-8 -*-'
-   let pos = getpos(".")
-   execute ":normal O" . text
-   call setpos(".", pos)
-endfunction
-nnoremap <silent> <C-t> :<C-u>call Pd()<CR>
-nnoremap <silent> <C-e> :<C-u>call Pe()<CR>
-
-" rename current file
-function Rename(newfile)
-    call rename(expand('%'), a:newfile)
-    e newfile
-endfunction
-
-" command search
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-nnoremap <silent> <S-m> :<C-u>nohlsearch<CR>
-
-" Map ctrl-movement keys to window switching
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Left>
-
-" Switch to alternate file
-map <C-n> :bnext<CR>
-map <C-p> :bprevious<CR>
-
 augroup Html
   autocmd!
   autocmd FileType html setlocal shiftwidth=2
@@ -108,11 +110,6 @@ augroup Javascript
   autocmd FileType javascript setlocal tabstop=2
 augroup END
 
-augroup SQL
-  autocmd!
-  autocmd FileType sql setlocal shiftwidth=2
-  autocmd FileType sql setlocal softtabstop=2
-  autocmd FileType sql setlocal tabstop=2
-augroup END
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 filetype plugin indent on
