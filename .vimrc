@@ -54,7 +54,7 @@ function Rename(name)
     call rename(expand('%'), a:name)
     execute 'bd | e ' . a:name
 endfunction
-command! -nargs=1 Mv call Rename(<q-args>)
+command! -nargs=1 Rn call Rename(<q-args>)
 
 " for python
 function PythonDebug()
