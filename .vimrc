@@ -50,27 +50,29 @@ map <C-n> :bnext<CR>
 map <C-p> :bprevious<CR>
 
 " rename current file
-function Rename(name)
+function Move(name)
     call rename(expand('%'), a:name)
     execute 'bd | e ' . a:name
 endfunction
-command! -nargs=1 Rn call Rename(<q-args>)
+command! -nargs=1 Mv call Move(<q-args>)
+
+" copy current file
+function Copy(name)
+    execute 'w ' . a:name . ' | e ' . a:name
+endfunction
+command! -nargs=1 Cp call Copy(<q-args>)
 
 " for python
 function PythonDebug()
-   let text = 'import pdb;pdb.set_trace()'
-   let pos = getpos(".")
-   execute ":normal o" . text
-   call setpos(".", pos)
-endfunction
-
-function PythonEncoding()
-   let text = '# -*- coding:utf-8 -*-'
-   let pos = getpos(".")
-   execute ":normal O" . text
-   call setpos(".", pos)
+   let prase = 'import pdb;pdb.set_trace()'
+   execute ":normal o" . prase
 endfunction
 nnoremap <silent> <C-t> :<C-u>call PythonDebug()<CR>
+
+function PythonEncoding()
+   let prase = '# -*- coding:utf-8 -*-'
+   execute ":normal O" . prase
+endfunction
 nnoremap <silent> <C-e> :<C-u>call PythonEncoding()<CR>
 
 " plugin
