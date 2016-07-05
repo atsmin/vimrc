@@ -21,6 +21,7 @@
     rs = reset --soft
     ft = fetch
     mg = merge
+    delmged = !git branch --merged | grep -v '*' |  xargs git branch -d
 [reviewboard]
     url = http://review.develop-bbt757.com
 [push]
