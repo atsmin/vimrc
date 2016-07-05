@@ -50,15 +50,17 @@ map <C-n> :bnext<CR>
 map <C-p> :bprevious<CR>
 
 " rename current file
-function Move(name)
-    call rename(expand('%'), a:name)
-    execute 'bd | e ' . a:name
+function Rename(name)
+    let path = expand('%:h') . '/' . a:name
+    call rename(expand('%'), path)
+    execute 'bd | e ' . path
 endfunction
-command! -nargs=1 Mv call Move(<q-args>)
+command! -nargs=1 Rn call Rename(<q-args>)
 
 " copy current file
 function Copy(name)
-    execute 'w ' . a:name . ' | e ' . a:name
+    let path = expand('%:h') . '/' . a:name
+    execute 'w ' . path . ' | e ' . path
 endfunction
 command! -nargs=1 Cp call Copy(<q-args>)
 
