@@ -64,6 +64,12 @@ function Copy(name)
 endfunction
 command! -nargs=1 Cp call Copy(<q-args>)
 
+" remove current file
+function Remove()
+    execute 'bd | !rm ' . expand('%')
+endfunction
+command! Rm call Remove()
+
 " for python
 function PythonDebug()
    let prase = 'import pdb;pdb.set_trace()'
