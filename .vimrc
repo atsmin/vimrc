@@ -66,7 +66,8 @@ command! -nargs=1 Cp call Copy(<q-args>)
 
 " remove current file
 function Remove()
-    execute 'bd | !rm ' . expand('%')
+    let path = expand('%')
+    execute 'bd | !rm ' . path
 endfunction
 command! Rm call Remove()
 
